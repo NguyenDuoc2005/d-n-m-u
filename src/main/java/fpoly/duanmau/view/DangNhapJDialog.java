@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package fpoly.duanmau;
+package fpoly.duanmau.view;
 
 import fpoly.duanmau.utils.XImage;
 
@@ -46,14 +46,14 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/security.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/security.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel2.setText("Tên đăng nhập");
 
         jLabel3.setText("Mật khẩu");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Login.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/Login.png"))); // NOI18N
         jButton1.setText("Đăng nhập");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/Exit.png"))); // NOI18N
         jButton2.setText("Thoát");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

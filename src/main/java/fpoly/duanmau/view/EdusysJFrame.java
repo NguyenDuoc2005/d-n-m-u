@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fpoly.duanmau;
+package fpoly.duanmau.view;
 
 import fpoly.duanmau.utils.XImage;
 import java.awt.event.ActionEvent;
@@ -81,7 +81,7 @@ public class EdusysJFrame extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Log out.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/Log out.png"))); // NOI18N
         jButton1.setText("Đăng xuất");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -145,7 +145,7 @@ public class EdusysJFrame extends javax.swing.JFrame {
 
         jToolBar2.setRollover(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Log out.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/Log out.png"))); // NOI18N
         jButton2.setText("Đăng xuất");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

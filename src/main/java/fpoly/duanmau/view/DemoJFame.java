@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fpoly.duanmau;
+package fpoly.duanmau.view;
 
 import fpoly.duanmau.entity.NhanVien;
 import fpoly.duanmau.utils.XImage;
@@ -46,7 +46,7 @@ public class DemoJFame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Add.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/view/icon/Add.png"))); // NOI18N
         jButton1.setText("jButton1");
 
         lblHinhAnh.setText("hinhAnh.png");
