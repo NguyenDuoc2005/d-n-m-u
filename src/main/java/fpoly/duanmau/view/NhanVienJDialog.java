@@ -4,6 +4,9 @@
  */
 package fpoly.duanmau.view;
 
+import fpoly.duanmau.dao.NhanVienDAO;
+import fpoly.duanmau.entity.NhanVien;
+
 /**
  *
  * @author Nguyen duoc
@@ -16,6 +19,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
     public NhanVienJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+       
     }
 
     /**
