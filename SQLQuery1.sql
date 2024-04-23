@@ -86,7 +86,9 @@ JOIN HocVien hv ON kh.MaKH=hv.MaKH
 JOIN ChuyenDe cd ON cd.MaCD=kh.MaCD
 WHERE YEAR(NgayKG) = @Year
 GROUP BY TenCD
-END--------------------------------------CREATE PROC sp_ThongKeDiem
+END
+--------------------------------------
+CREATE PROC sp_ThongKeDiem
 AS BEGIN
 SELECT
 TenCD ChuyenDe,
@@ -98,7 +100,9 @@ FROM KhoaHoc kh
 JOIN HocVien hv ON kh.MaKH=hv.MaKH
 JOIN ChuyenDe cd ON cd.MaCD=kh.MaCD
 GROUP BY TenCD
-END-------------------------------------CREATE PROC sp_BangDiem(@MaKH INT)
+END
+-------------------------------------
+CREATE PROC sp_BangDiem(@MaKH INT)
 AS BEGIN
 SELECT
 nh.MaNH,
@@ -110,5 +114,19 @@ WHERE hv.MaKH = @MaKH
 ORDER BY hv.Diem DESC
 END
 ----------------------------------
+insert into NhanVien (MaNV,HoTen,MatKhau,VaiTro) values (?,?,?,?)
+UPDATE NhanVien SET MatKhau = ? , HoTen= ?, VaiTro= ? 
+WHERE MaNV = ? 
+delete from NhanVien where MaNV = ? 
 
-
+select * from NhanVien
+select * from NhanVien where MaNV = ?
+select * from NhanVien
+select * from HocVien
+-- nhan vien - chuyen de -nguoi hoc - khoa hoc - hoc vien
+insert into NhanVien values ('1','duoc','duoc',1)
+insert into ChuyenDe values ('1','giai tich',23000,22,'','kho vcl')
+insert into NguoiHoc values ('1','duoc','2005-06-30',1,'0366994505','duoc@gmail.com','k có nha','1','2005-06-30')
+insert into KhoaHoc values ('1',20000,30,'2005-06-30','k co ghi chu nao','1','2000-06-12')
+insert into HocVien values (1,'1',9)
+exec sp_BangDiem 1
