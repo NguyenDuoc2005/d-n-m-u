@@ -15,10 +15,6 @@ import java.util.List;
  */
 public class test {
     public static void main(String[] args) {
-        ThongKeDAO dao = new ThongKeDAO(); 
-        List<Object[]> list = dao.getBangDiem(1);
-        for(Object[] obj : list){
-            System.out.println("ten: "+ obj[1]+""+obj[2]);
-        }
+        
     }
 }

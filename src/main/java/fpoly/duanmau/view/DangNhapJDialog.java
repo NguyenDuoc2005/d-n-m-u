@@ -5,16 +5,18 @@
 package fpoly.duanmau.view;
 import fpoly.duanmau.entity.NhanVien;
 import fpoly.duanmau.dao.NhanVienDAO;
+import fpoly.duanmau.utils.Auth;
 import fpoly.duanmau.utils.XImage;
 import java.util.List;
 import javax.swing.JDialog;
+import fpoly.duanmau.utils.MsgBox;
 
 /**
  *
  * @author Nguyen duoc
  */
 public class DangNhapJDialog extends javax.swing.JDialog {
-
+    NhanVienDAO dao = new NhanVienDAO(); 
     /**
      * Creates new form DangNhapJDialog
      */
@@ -120,15 +122,34 @@ public class DangNhapJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    void ketThuc(){
+        if(MsgBox.confirm(this,"Bạn muốn kết thúc ứng dụng ?")){
+            System.exit(0);
+        }
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        ketThuc();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    void dangNhap(){
+        String strMaNV  = txtTenDangNhap.getText(); 
+        String strPassWord = new String(txtMatKhau.getPassword());
+        NhanVien nv = dao.selectById(strMaNV);
+        if(nv == null){
+            MsgBox.alert(this,"Sai tên đăng nhập");
+        }else{
+            if(!nv.getMatKhau().equals(strPassWord)){
+                System.out.println(nv.getMatKhau());
+                MsgBox.alert(this,"Sai mật khẩu");
+            }else{
+                  Auth.user = nv; 
+                  this.dispose();
+                    }
+        }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
+         // TODO add your handling code here:
+        dangNhap();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

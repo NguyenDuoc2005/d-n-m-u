@@ -5,7 +5,10 @@
 package fpoly.duanmau.view;
 
 import fpoly.duanmau.dao.NhanVienDAO;
+import fpoly.duanmau.entity.ChuyenDe;
 import fpoly.duanmau.entity.NhanVien;
+import fpoly.duanmau.utils.Auth;
+import fpoly.duanmau.utils.MsgBox;
 import fpoly.duanmau.utils.XImage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,21 +37,30 @@ public class Edusys_JFrame extends javax.swing.JFrame {
             SimpleDateFormat format =  new SimpleDateFormat("hh:mm:ss a");
                @Override
                public void actionPerformed(ActionEvent e) {
-                  lblDongHo1.setText(format.format(new Date()));
-                          
-                   
-                   
+                  lblDongHo1.setText(format.format(new Date()));      
                }
            }).start();
        this.openWelcome();
        this.openLogin();
     }
     
+    
     void openWelcome(){
         new ChaoJDialog(this, true).setVisible(true);
     }
     void openLogin(){
         new DangNhapJDialog(this, true).setVisible(true);
+    }
+    void openDoiMatKhau(){  
+       
+        new DoiMatKhauJDialog(this, true).setVisible(true);
+    }
+    void openNguoiHoc(){
+        if(Auth.isLogin()){
+            new NguoiHocJDialog(this, true).setVisible(true);
+        }else {
+            MsgBox.alert(this,"Vui lòng đăng nhập");
+        }
     }
 
     /**
@@ -61,23 +73,90 @@ public class Edusys_JFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar2 = new javax.swing.JToolBar();
-        jButton2 = new javax.swing.JButton();
+        btnDangXuat = new javax.swing.JButton();
+        btnKetThuc = new javax.swing.JButton();
+        btnChuyenDe = new javax.swing.JButton();
+        btnNguoiHoc = new javax.swing.JButton();
+        btnKhoaHoc = new javax.swing.JButton();
+        btnHocVien = new javax.swing.JButton();
+        btnHuongDan = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lblDongHo1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        mnHeThong = new javax.swing.JMenu();
+        mniDoiMatKhau = new javax.swing.JMenuItem();
+        mniDangXuat = new javax.swing.JMenuItem();
+        mniKetThuc = new javax.swing.JMenuItem();
+        mnQuanLy = new javax.swing.JMenu();
+        mnThongKe = new javax.swing.JMenu();
+        mniBangDiem = new javax.swing.JMenuItem();
+        mniLuongNguoiHoc = new javax.swing.JMenuItem();
+        mniDiemChuyenDe = new javax.swing.JMenuItem();
+        mniDoanhThu = new javax.swing.JMenuItem();
+        mnTroGiup = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToolBar2.setRollover(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
-        jButton2.setText("Đăng xuất");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton2);
+        btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnDangXuat.setText("Đăng xuất");
+        btnDangXuat.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDangXuat.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnDangXuat);
+
+        btnKetThuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnKetThuc.setText("Kết thúc");
+        btnKetThuc.setFocusable(false);
+        btnKetThuc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKetThuc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnKetThuc);
+
+        btnChuyenDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnChuyenDe.setText("Chuyên đề");
+        btnChuyenDe.setFocusable(false);
+        btnChuyenDe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnChuyenDe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnChuyenDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChuyenDeActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnChuyenDe);
+
+        btnNguoiHoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnNguoiHoc.setText("Người học ");
+        btnNguoiHoc.setFocusable(false);
+        btnNguoiHoc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNguoiHoc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnNguoiHoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNguoiHocActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnNguoiHoc);
+
+        btnKhoaHoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnKhoaHoc.setText("Khóa học ");
+        btnKhoaHoc.setFocusable(false);
+        btnKhoaHoc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKhoaHoc.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnKhoaHoc);
+
+        btnHocVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnHocVien.setText("Học viên");
+        btnHocVien.setFocusable(false);
+        btnHocVien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnHocVien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnHocVien);
+
+        btnHuongDan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
+        btnHuongDan.setText("Hướng dẫn");
+        btnHuongDan.setFocusable(false);
+        btnHuongDan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnHuongDan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnHuongDan);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -109,11 +188,60 @@ public class Edusys_JFrame extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        jMenu3.setText("File");
-        jMenuBar2.add(jMenu3);
+        mnHeThong.setText("Hệ thống");
 
-        jMenu4.setText("Edit");
-        jMenuBar2.add(jMenu4);
+        mniDoiMatKhau.setText("Đổi mật khẩu");
+        mniDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDoiMatKhauActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mniDoiMatKhau);
+
+        mniDangXuat.setText("Đăng xuất");
+        mniDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDangXuatActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mniDangXuat);
+
+        mniKetThuc.setText("Kết thúc");
+        mniKetThuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniKetThucActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mniKetThuc);
+
+        jMenuBar2.add(mnHeThong);
+
+        mnQuanLy.setText("Quản lý");
+        jMenuBar2.add(mnQuanLy);
+
+        mnThongKe.setText("Thống kê");
+
+        mniBangDiem.setText("Bảng điểm");
+        mnThongKe.add(mniBangDiem);
+
+        mniLuongNguoiHoc.setText("Lượng người học");
+        mniLuongNguoiHoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniLuongNguoiHocActionPerformed(evt);
+            }
+        });
+        mnThongKe.add(mniLuongNguoiHoc);
+
+        mniDiemChuyenDe.setText("Điểm chuyên đề");
+        mnThongKe.add(mniDiemChuyenDe);
+
+        mniDoanhThu.setText("Doanh thu");
+        mnThongKe.add(mniDoanhThu);
+
+        jMenuBar2.add(mnThongKe);
+
+        mnTroGiup.setText("Trợ giúp");
+        jMenuBar2.add(mnTroGiup);
 
         setJMenuBar(jMenuBar2);
 
@@ -137,6 +265,50 @@ public class Edusys_JFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mniLuongNguoiHocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniLuongNguoiHocActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mniLuongNguoiHocActionPerformed
+    private void doiMatKhau(){
+       
+        if(Auth.isLogin()){
+            new DoiMatKhauJDialog(this, true).setVisible(true);
+        }else {
+            MsgBox.alert(this,"Vui lòng đăng nhập");
+        }
+    }
+    private void mniDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDoiMatKhauActionPerformed
+        // TODO add your handling code here:
+       doiMatKhau();
+    
+    }//GEN-LAST:event_mniDoiMatKhauActionPerformed
+    void dangXuat(){
+        Auth.clear();   
+        openLogin();
+    }
+    void ketThuc(){
+        if(MsgBox.confirm(this, "Bạn muốn kết thúc làm việc"))
+            System.exit(0);
+    }
+    private void mniDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDangXuatActionPerformed
+        // TODO add your handling code here:
+        dangXuat();
+    }//GEN-LAST:event_mniDangXuatActionPerformed
+
+    private void mniKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKetThucActionPerformed
+        // TODO add your handling code here:
+        ketThuc();
+    }//GEN-LAST:event_mniKetThucActionPerformed
+
+    private void btnChuyenDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChuyenDeActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnChuyenDeActionPerformed
+
+    private void btnNguoiHocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNguoiHocActionPerformed
+        // TODO add your handling code here:
+        openNguoiHoc();
+    }//GEN-LAST:event_btnNguoiHocActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,13 +346,28 @@ public class Edusys_JFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnChuyenDe;
+    private javax.swing.JButton btnDangXuat;
+    private javax.swing.JButton btnHocVien;
+    private javax.swing.JButton btnHuongDan;
+    private javax.swing.JButton btnKetThuc;
+    private javax.swing.JButton btnKhoaHoc;
+    private javax.swing.JButton btnNguoiHoc;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JLabel lblDongHo1;
+    private javax.swing.JMenu mnHeThong;
+    private javax.swing.JMenu mnQuanLy;
+    private javax.swing.JMenu mnThongKe;
+    private javax.swing.JMenu mnTroGiup;
+    private javax.swing.JMenuItem mniBangDiem;
+    private javax.swing.JMenuItem mniDangXuat;
+    private javax.swing.JMenuItem mniDiemChuyenDe;
+    private javax.swing.JMenuItem mniDoanhThu;
+    private javax.swing.JMenuItem mniDoiMatKhau;
+    private javax.swing.JMenuItem mniKetThuc;
+    private javax.swing.JMenuItem mniLuongNguoiHoc;
     // End of variables declaration//GEN-END:variables
 }
