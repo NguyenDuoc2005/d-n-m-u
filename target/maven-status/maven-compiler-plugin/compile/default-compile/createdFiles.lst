@@ -1,12 +1,13 @@
 fpoly\duanmau\view\DemoJFame$1.class
 fpoly\duanmau\view\NhanVienJDialog$1.class
+fpoly\duanmau\view\Edusys_JFrame$1.class
 fpoly\duanmau\entity\HocVien.class
 fpoly\duanmau\dao\EduSysDAO.class
 fpoly\duanmau\dao\NguoiHocDAO.class
 fpoly\duanmau\view\KhoaHocJDialog$1$1.class
 fpoly\duanmau\view\DangNhapJDialog$3$1.class
 fpoly\duanmau\view\DoiMatKhauJDialog$1$1.class
-fpoly\duanmau\view\EdusysJFrame$2.class
+fpoly\duanmau\dao\ThongKeDAO.class
 fpoly\duanmau\view\NguoiHocJDialog$1$1.class
 fpoly\duanmau\entity\NguoiHoc.class
 fpoly\duanmau\view\ChaoJDialog$1.class
@@ -16,6 +17,7 @@ fpoly\duanmau\view\DangNhapJDialog$1.class
 fpoly\duanmau\utils\XImage.class
 fpoly\duanmau\view\DemoJFame.class
 fpoly\duanmau\view\ChaoJDialog$2.class
+fpoly\duanmau\view\Edusys_JFrame$2.class
 fpoly\duanmau\view\KhoaHocJDialog$1.class
 fpoly\duanmau\entity\KhoaHoc.class
 fpoly\duanmau\dao\ChuyenDeDAO.class
@@ -29,7 +31,6 @@ fpoly\duanmau\view\DoiMatKhauJDialog.class
 fpoly\duanmau\view\ChaoJDialog.class
 fpoly\duanmau\view\GioiThieuJDialog.class
 fpoly\duanmau\view\HocVienJDialog.class
-fpoly\duanmau\view\EdusysJFrame.class
 fpoly\duanmau\view\ThongKeJDialog$1.class
 fpoly\duanmau\entity\NhanVien.class
 fpoly\duanmau\view\DoiMatKhauJDialog$1.class
@@ -39,11 +40,12 @@ fpoly\duanmau\view\DemoJFame$4.class
 fpoly\duanmau\utils\JdbcHelper.class
 fpoly\duanmau\view\DangNhapJDialog$2.class
 fpoly\duanmau\view\GioiThieuJDialog$1$1.class
-fpoly\duanmau\view\EdusysJFrame$1.class
+fpoly\duanmau\utils\test.class
 fpoly\duanmau\view\NguoiHocJDialog.class
 fpoly\duanmau\view\DemoJFame$3.class
 fpoly\duanmau\view\NguoiHocJDialog$1.class
 fpoly\duanmau\dao\HocVienDAO.class
+fpoly\duanmau\view\Edusys_JFrame.class
 fpoly\duanmau\view\KhoaHocJDialog.class
 fpoly\duanmau\dao\KhoaHocDAO.class
 fpoly\duanmau\view\DemoJFame$2.class

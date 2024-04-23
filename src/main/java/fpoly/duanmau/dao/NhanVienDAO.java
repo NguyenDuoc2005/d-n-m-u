@@ -46,8 +46,7 @@ public class NhanVienDAO extends EduSysDAO<NhanVien, String>{
        if(list.isEmpty()){
            return null; 
        }
-       return list.get(0);
-           
+       return list.get(0);    
     }
 
     @Override
@@ -64,9 +63,11 @@ public class NhanVienDAO extends EduSysDAO<NhanVien, String>{
                   list.add(entity);
             }
         } catch (Exception e) {
-            throw new RuntimeException(); 
+            throw new RuntimeException(e); 
         }
         return list; 
     }
+    
+            
     
 }
