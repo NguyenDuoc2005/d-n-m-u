@@ -149,6 +149,11 @@ public class Edusys_JFrame extends javax.swing.JFrame {
         btnHocVien.setFocusable(false);
         btnHocVien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnHocVien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnHocVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHocVienActionPerformed(evt);
+            }
+        });
         jToolBar2.add(btnHocVien);
 
         btnHuongDan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fpoly/duanmau/icon/Exit.png"))); // NOI18N
@@ -309,6 +314,11 @@ public class Edusys_JFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         openNguoiHoc();
     }//GEN-LAST:event_btnNguoiHocActionPerformed
+
+    private void btnHocVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHocVienActionPerformed
+        // TODO add your handling code here:
+        new NhanVienJDialog(this, true).setVisible(true);
+    }//GEN-LAST:event_btnHocVienActionPerformed
 
     /**
      * @param args the command line arguments
