@@ -11,6 +11,7 @@ D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\dao\KhoaHocDAO.
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\view\GioiThieuJDialog.java
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\entity\KhoaHoc.java
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\utils\JdbcHelper.java
+D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\view\ChuyenDeJDialog.java
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\dao\ChuyenDeDAO.java
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\dao\EduSysDAO.java
 D:\BaiTapCode\Dự án mẫu\d-n-m-u\src\main\java\fpoly\duanmau\dao\NguoiHocDAO.java

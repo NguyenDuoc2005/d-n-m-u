@@ -307,7 +307,7 @@ public class Edusys_JFrame extends javax.swing.JFrame {
 
     private void btnChuyenDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChuyenDeActionPerformed
         // TODO add your handling code here:
-        
+        new ChuyenDeJDialog(this,true).setVisible(true);
     }//GEN-LAST:event_btnChuyenDeActionPerformed
 
     private void btnNguoiHocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNguoiHocActionPerformed
